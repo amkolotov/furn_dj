@@ -1,0 +1,517 @@
+[
+  {
+    "product": "алекс",
+    "upload": "product_images/столы/алекс/alex-1.jpg"
+  },
+  {
+    "product": "алекс",
+    "upload": "product_images/столы/алекс/alex-2.jpg"
+  },
+  {
+    "product": "алекс",
+    "upload": "product_images/столы/алекс/alex-3.jpg"
+  },
+  {
+    "product": "алекс",
+    "upload": "product_images/столы/алекс/alex-4.jpg"
+  },
+  {
+    "product": "бесто",
+    "upload": "product_images/столы/бесто/besto-1.jpg"
+  },
+  {
+    "product": "бесто",
+    "upload": "product_images/столы/бесто/besto-2.jpg"
+  },
+  {
+    "product": "бесто",
+    "upload": "product_images/столы/бесто/besto-3.jpg"
+  },
+  {
+    "product": "бесто",
+    "upload": "product_images/столы/бесто/besto-4.jpg"
+  },
+  {
+    "product": "брусали",
+    "upload": "product_images/столы/брусали/brusali-1.jpg"
+  },
+  {
+    "product": "брусали",
+    "upload": "product_images/столы/брусали/brusali-2.jpg"
+  },
+  {
+    "product": "брусали",
+    "upload": "product_images/столы/брусали/brusali-3.jpg"
+  },
+  {
+    "product": "брусали",
+    "upload": "product_images/столы/брусали/brusali-4.jpg"
+  },
+  {
+    "product": "идасен",
+    "upload": "product_images/столы/идасен/idasen-1.jpg"
+  },
+  {
+    "product": "идасен",
+    "upload": "product_images/столы/идасен/idasen-2.jpg"
+  },
+  {
+    "product": "идасен",
+    "upload": "product_images/столы/идасен/idasen-3.jpg"
+  },
+  {
+    "product": "идасен",
+    "upload": "product_images/столы/идасен/idasen-4.jpg"
+  },
+  {
+    "product": "ингаторп",
+    "upload": "product_images/столы/ингаторп/ingatorp-1.jpg"
+  },
+  {
+    "product": "ингаторп",
+    "upload": "product_images/столы/ингаторп/ingatorp-2.jpg"
+  },
+  {
+    "product": "ингаторп",
+    "upload": "product_images/столы/ингаторп/ingatorp-3.jpg"
+  },
+  {
+    "product": "ингаторп",
+    "upload": "product_images/столы/ингаторп/ingatorp-4.jpg"
+  },
+  {
+    "product": "куллаберг",
+    "upload": "product_images/столы/куллаберг/kullaberg-1.jpg"
+  },
+  {
+    "product": "куллаберг",
+    "upload": "product_images/столы/куллаберг/kullaberg-2.jpg"
+  },
+  {
+    "product": "куллаберг",
+    "upload": "product_images/столы/куллаберг/kullaberg-3.jpg"
+  },
+  {
+    "product": "куллаберг",
+    "upload": "product_images/столы/куллаберг/kullaberg-4.jpg"
+  },
+  {
+    "product": "мальм",
+    "upload": "product_images/столы/мальм/malm-1.jpg"
+  },
+  {
+    "product": "мальм",
+    "upload": "product_images/столы/мальм/malm-2.jpg"
+  },
+  {
+    "product": "мальм",
+    "upload": "product_images/столы/мальм/malm-3.jpg"
+  },
+  {
+    "product": "мальм",
+    "upload": "product_images/столы/мальм/malm-4.jpg"
+  },
+  {
+    "product": "хемнес",
+    "upload": "product_images/столы/хемнес/hemnes-1.jpg"
+  },
+  {
+    "product": "хемнес",
+    "upload": "product_images/столы/хемнес/hemnes-2.jpg"
+  },
+  {
+    "product": "хемнес",
+    "upload": "product_images/столы/хемнес/hemnes-3.jpg"
+  },
+  {
+    "product": "хемнес",
+    "upload": "product_images/столы/хемнес/hemnes-4.jpg"
+  },
+
+  {
+    "product": "лобергет",
+    "upload": "product_images/стулья/лобергет/loberget-1.jpg"
+  },
+  {
+    "product": "лобергет",
+    "upload": "product_images/стулья/лобергет/loberget-2.jpg"
+  },
+  {
+    "product": "лобергет",
+    "upload": "product_images/стулья/лобергет/loberget-3.jpg"
+  },
+  {
+    "product": "лобергет",
+    "upload": "product_images/стулья/лобергет/loberget-4.jpg"
+  },
+  {
+    "product": "лонгфьелль",
+    "upload": "product_images/стулья/лонгфьелль/langfjaell-1.jpg"
+  },
+  {
+    "product": "лонгфьелль",
+    "upload": "product_images/стулья/лонгфьелль/langfjaell-2.jpg"
+  },
+  {
+    "product": "лонгфьелль",
+    "upload": "product_images/стулья/лонгфьелль/langfjaell-3.jpg"
+  },
+  {
+    "product": "лонгфьелль",
+    "upload": "product_images/стулья/лонгфьелль/langfjaell-4.jpg"
+  },
+  {
+    "product": "маркус",
+    "upload": "product_images/стулья/маркус/markus-1.jpg"
+  },
+  {
+    "product": "маркус",
+    "upload": "product_images/стулья/маркус/markus-2.jpg"
+  },
+  {
+    "product": "маркус",
+    "upload": "product_images/стулья/маркус/markus-3.jpg"
+  },
+  {
+    "product": "маркус",
+    "upload": "product_images/стулья/маркус/markus-4.jpg"
+  },
+  {
+    "product": "мольте",
+    "upload": "product_images/стулья/мольте/molte-1.jpg"
+  },
+  {
+    "product": "мольте",
+    "upload": "product_images/стулья/мольте/molte-2.jpg"
+  },
+  {
+    "product": "мольте",
+    "upload": "product_images/стулья/мольте/molte-3.jpg"
+  },
+  {
+    "product": "мольте",
+    "upload": "product_images/стулья/мольте/molte-4.jpg"
+  },
+  {
+    "product": "одгер",
+    "upload": "product_images/стулья/одгер/odger-1.jpg"
+  },
+  {
+    "product": "одгер",
+    "upload": "product_images/стулья/одгер/odger-2.jpg"
+  },
+  {
+    "product": "одгер",
+    "upload": "product_images/стулья/одгер/odger-3.jpg"
+  },
+  {
+    "product": "одгер",
+    "upload": "product_images/стулья/одгер/odger-4.jpg"
+  },
+  {
+    "product": "орфьелль",
+    "upload": "product_images/стулья/орфьелль/oerfjaell-1.jpg"
+  },
+  {
+    "product": "орфьелль",
+    "upload": "product_images/стулья/орфьелль/oerfjaell-2.jpg"
+  },
+  {
+    "product": "орфьелль",
+    "upload": "product_images/стулья/орфьелль/oerfjaell-3.jpg"
+  },
+  {
+    "product": "орфьелль",
+    "upload": "product_images/стулья/орфьелль/oerfjaell-4.jpg"
+  },
+  {
+    "product": "хаттефьелль",
+    "upload": "product_images/стулья/хаттефьелль/hattefjaell-1.jpg"
+  },
+  {
+    "product": "хаттефьелль",
+    "upload": "product_images/стулья/хаттефьелль/hattefjaell-2.jpg"
+  },
+  {
+    "product": "хаттефьелль",
+    "upload": "product_images/стулья/хаттефьелль/hattefjaell-3.jpg"
+  },
+  {
+    "product": "хаттефьелль",
+    "upload": "product_images/стулья/хаттефьелль/hattefjaell-4.jpg"
+  },
+  {
+    "product": "юлес",
+    "upload": "product_images/стулья/юлес/jules-1.jpg"
+  },
+  {
+    "product": "юлес",
+    "upload": "product_images/стулья/юлес/jules-2.jpg"
+  },
+  {
+    "product": "юлес",
+    "upload": "product_images/стулья/юлес/jules-3.jpg"
+  },
+  {
+    "product": "юлес",
+    "upload": "product_images/стулья/юлес/jules-4.jpg"
+  },
+
+  {
+    "product": "бединге",
+    "upload": "product_images/диваны/бединге/beddinge-1.jpg"
+  },
+  {
+    "product": "бединге",
+    "upload": "product_images/диваны/бединге/beddinge-2.jpg"
+  },
+  {
+    "product": "бединге",
+    "upload": "product_images/диваны/бединге/beddinge-3.jpg"
+  },
+  {
+    "product": "бединге",
+    "upload": "product_images/диваны/бединге/beddinge-4.jpg"
+  },
+  {
+    "product": "фрихетэн",
+    "upload": "product_images/диваны/фрихетэн/friheten-1.jpg"
+  },
+  {
+    "product": "фрихетэн",
+    "upload": "product_images/диваны/фрихетэн/friheten-2.jpg"
+  },
+  {
+    "product": "фрихетэн",
+    "upload": "product_images/диваны/фрихетэн/friheten-3.jpg"
+  },
+  {
+    "product": "фрихетэн",
+    "upload": "product_images/диваны/фрихетэн/friheten-4.jpg"
+  },
+  {
+    "product": "гессберг",
+    "upload": "product_images/диваны/гессберг/gessberg-1.jpg"
+  },
+  {
+    "product": "гессберг",
+    "upload": "product_images/диваны/гессберг/gessberg-2.jpg"
+  },
+  {
+    "product": "гессберг",
+    "upload": "product_images/диваны/гессберг/gessberg-3.jpg"
+  },
+  {
+    "product": "гессберг",
+    "upload": "product_images/диваны/гессберг/gessberg-4.jpg"
+  },
+  {
+    "product": "хольмсунд",
+    "upload": "product_images/диваны/хольмсунд/holsund-1.jpg"
+  },
+  {
+    "product": "хольмсунд",
+    "upload": "product_images/диваны/хольмсунд/holsund-2.jpg"
+  },
+  {
+    "product": "хольмсунд",
+    "upload": "product_images/диваны/хольмсунд/holsund-3.jpg"
+  },
+  {
+    "product": "хольмсунд",
+    "upload": "product_images/диваны/хольмсунд/holsund-4.jpg"
+  },
+  {
+    "product": "клиппан",
+    "upload": "product_images/диваны/клиппан/klippan-1.jpg"
+  },
+  {
+    "product": "клиппан",
+    "upload": "product_images/диваны/клиппан/klippan-2.jpg"
+  },
+  {
+    "product": "клиппан",
+    "upload": "product_images/диваны/клиппан/klippan-3.jpg"
+  },
+  {
+    "product": "клиппан",
+    "upload": "product_images/диваны/клиппан/klippan-4.jpg"
+  },
+  {
+    "product": "кноппарп",
+    "upload": "product_images/диваны/кноппарп/knopparp-1.jpg"
+  },
+  {
+    "product": "кноппарп",
+    "upload": "product_images/диваны/кноппарп/knopparp-2.jpg"
+  },
+  {
+    "product": "кноппарп",
+    "upload": "product_images/диваны/кноппарп/knopparp-3.jpg"
+  },
+  {
+    "product": "кноппарп",
+    "upload": "product_images/диваны/кноппарп/knopparp-4.jpg"
+  },
+  {
+    "product": "ландскруна",
+    "upload": "product_images/диваны/ландскруна/landskrona-1.jpg"
+  },
+  {
+    "product": "ландскруна",
+    "upload": "product_images/диваны/ландскруна/landskrona-2.jpg"
+  },
+  {
+    "product": "ландскруна",
+    "upload": "product_images/диваны/ландскруна/landskrona-3.jpg"
+  },
+  {
+    "product": "ландскруна",
+    "upload": "product_images/диваны/ландскруна/landskrona-4.jpg"
+  },
+  {
+    "product": "свэнста",
+    "upload": "product_images/диваны/свэнста/svensta-1.jpg"
+  },
+  {
+    "product": "свэнста",
+    "upload": "product_images/диваны/свэнста/svensta-2.jpg"
+  },
+  {
+    "product": "свэнста",
+    "upload": "product_images/диваны/свэнста/svensta-3.jpg"
+  },
+  {
+    "product": "свэнста",
+    "upload": "product_images/диваны/свэнста/svensta-4.jpg"
+  },
+
+  {
+    "product": "бримнэс",
+    "upload": "product_images/шкафы/бримнэс/brimnes-1.jpg"
+  },
+  {
+    "product": "бримнэс",
+    "upload": "product_images/шкафы/бримнэс/brimnes-2.jpg"
+  },
+  {
+    "product": "бримнэс",
+    "upload": "product_images/шкафы/бримнэс/brimnes-3.jpg"
+  },
+  {
+    "product": "бримнэс",
+    "upload": "product_images/шкафы/бримнэс/brimnes-4.jpg"
+  },
+  {
+    "product": "хэмнэс",
+    "upload": "product_images/шкафы/хэмнэс/hemnes-1.jpg"
+  },
+  {
+    "product": "хэмнэс",
+    "upload": "product_images/шкафы/хэмнэс/hemnes-2.jpg"
+  },
+  {
+    "product": "хэмнэс",
+    "upload": "product_images/шкафы/хэмнэс/hemnes-3.jpg"
+  },
+  {
+    "product": "хэмнэс",
+    "upload": "product_images/шкафы/хэмнэс/hemnes-4.jpg"
+  },
+  {
+    "product": "клеппстад",
+    "upload": "product_images/шкафы/клеппстад/kleppstad-1.jpg"
+  },
+  {
+    "product": "клеппстад",
+    "upload": "product_images/шкафы/клеппстад/kleppstad-2.jpg"
+  },
+  {
+    "product": "клеппстад",
+    "upload": "product_images/шкафы/клеппстад/kleppstad-3.jpg"
+  },
+  {
+    "product": "клеппстад",
+    "upload": "product_images/шкафы/клеппстад/kleppstad-4.jpg"
+  },
+  {
+    "product": "нордкиза",
+    "upload": "product_images/шкафы/нордкиза/nordkisa-1.jpg"
+  },
+  {
+    "product": "нордкиза",
+    "upload": "product_images/шкафы/нордкиза/nordkisa-2.jpg"
+  },
+  {
+    "product": "нордкиза",
+    "upload": "product_images/шкафы/нордкиза/nordkisa-3.jpg"
+  },
+  {
+    "product": "нордкиза",
+    "upload": "product_images/шкафы/нордкиза/nordkisa-4.jpg"
+  },
+  {
+    "product": "раккестад",
+    "upload": "product_images/шкафы/раккестад/rakkestad-1.jpg"
+  },
+  {
+    "product": "раккестад",
+    "upload": "product_images/шкафы/раккестад/rakkestad-2.jpg"
+  },
+  {
+    "product": "раккестад",
+    "upload": "product_images/шкафы/раккестад/rakkestad-3.jpg"
+  },
+  {
+    "product": "раккестад",
+    "upload": "product_images/шкафы/раккестад/rakkestad-4.jpg"
+  },
+  {
+    "product": "сонгесанд",
+    "upload": "product_images/шкафы/сонгесанд/songesand-1.jpg"
+  },
+  {
+    "product": "сонгесанд",
+    "upload": "product_images/шкафы/сонгесанд/songesand-2.jpg"
+  },
+  {
+    "product": "сонгесанд",
+    "upload": "product_images/шкафы/сонгесанд/songesand-3.jpg"
+  },
+  {
+    "product": "сонгесанд",
+    "upload": "product_images/шкафы/сонгесанд/songesand-4.jpg"
+  },
+  {
+    "product": "сандландет",
+    "upload": "product_images/шкафы/сандландет/sundlandet-1.jpg"
+  },
+  {
+    "product": "сандландет",
+    "upload": "product_images/шкафы/сандландет/sundlandet-2.jpg"
+  },
+  {
+    "product": "сандландет",
+    "upload": "product_images/шкафы/сандландет/sundlandet-3.jpg"
+  },
+  {
+    "product": "сандландет",
+    "upload": "product_images/шкафы/сандландет/sundlandet-4.jpg"
+  },
+  {
+    "product": "сювде",
+    "upload": "product_images/шкафы/сювде/syvde-1.jpg"
+  },
+  {
+    "product": "сювде",
+    "upload": "product_images/шкафы/сювде/syvde-2.jpg"
+  },
+  {
+    "product": "сювде",
+    "upload": "product_images/шкафы/сювде/syvde-3.jpg"
+  },
+  {
+    "product": "сювде",
+    "upload": "product_images/шкафы/сювде/syvde-4.jpg"
+  }
+]

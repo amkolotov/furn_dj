@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+    {{ category.name|title }}
+{% endblock %}
+
+{% block content %}
+
+<div class="container list">
+
+    <div class="nav justify-content-center categories-menu">
+
+        <div class="nav-item">
+            <a class="nav-link text-dark" href="{% url 'main_app:categories' %}">
+                {{ category.name|title }}
+            </a>
+        </div>
+        <div class="nav-item">
+            <a class="nav-link text-dark" href="#">
+                Страница: {{ page_obj.number }}
+            </a>
+        </div>
+
+    </div>
+
+
+    <div class="row">
+
+        {% for product in object_list %}
+        <div class="col-6 d-flex justify-content-center hot-offers my-4">
+            <a href="{% url 'main_app:product' product.pk %}">
+                <img class="product-img"
+                     src="{% get_media_prefix %}{{ product.images_set.first.upload }}"
+                     alt="{{ product.name }}">
+                <div class="text">
+                    <div class="my-auto">
+                        <h4>{{ product.name|title }}</h4>
+                        <img class="my-2" src="{% static 'img/icon-hover.png' %}" alt="img">
+                        <p class="mx-4">{{ product.short_desc }}</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+
+    </div>
+
+    <div class="row justify-content-center my-4">
+        {% include 'includes/inc_pagination.html' %}
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% load static %}
+
+<div class="navbar navbar-light fixed-top">
+    <a class="navbar-brand my-0 mr-md-auto" href="{% url 'main_app:index' %}"><img src="{% static 'img/logo.png' %}" alt="logo"></a>
+    <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" href="{% url 'main_app:index' %}">Главная</a>
+        <a class="p-2 text-dark" href="{% url 'main_app:categories' %}">Категории</a>
+        <a class="p-2 text-dark" href="{% url 'main_app:contacts' %}">Контакты</a>
+        <a class="p-2 text-dark" href="#">Корзина</a>
+    </nav>
+    <a class="btn btn-outline-primary" href="#">Войти</a>
+</div>

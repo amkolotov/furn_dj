@@ -1,0 +1,20 @@
+{% load static %}
+
+<div class="container">
+
+    <ul class="nav justify-content-center categories-menu">
+        <li class="nav-item">
+            <a class="nav-link text-dark" href="{% url 'main_app:category_products' 0 %}">Все</a>
+        </li>
+
+        {% for category in categories %}
+        <li class="nav-item">
+            <a class="nav-link text-dark" href="{% url 'main_app:category_products' category.pk %}">
+                {{ category.name|title }}
+            </a>
+        </li>
+        {% endfor %}
+
+    </ul>
+
+</div>

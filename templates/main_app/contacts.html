@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Контакты
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="contacts card-deck text-center mb-5">
+        {% for contact in contacts %}
+        <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <h2 class="mt-2">{{ contact.city }}</h2>
+                <h4 class="mt-4">телефон</h4>
+                <p>{{ contact.phone }}</p>
+                <h4 class="mt-4">email</h4>
+                <p>{{ contact.email }}</p>
+                <h4 class="mt-4">адрес</h4>
+                <p>{{ contact.address }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

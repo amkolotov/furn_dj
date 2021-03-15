@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+a:hover {
+    color: black;
+}
+
+.navbar {
+    background-color: #f2f2f2;
+}
+
+.marketing {
+    margin-top: 56px;
+}
+
+
+
+
+
+
+.slider {
+    height: 630px;
+    background-image: url(/static/img/slide2.jpg);
+    background-size: 100%;
+    opacity: 0.9;
+}
+
+.slider-text {
+    color: #1e1515;
+    margin-left: 14rem
+}
+
+.slider-text h1 {
+    margin: 0;
+}
+
+
+.offer {
+    background-color: #f2f2f2;
+}
+
+.hot-offers {
+    height: 300px;
+}
+.product {
+    position: relative;
+}
+
+.product-img {
+    height: 300px;
+}
+
+.hot-offers a .text {
+    display: none;
+}
+
+.hot-offers a:hover .text {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    background-color: #ffffff;
+    opacity: 0.7;
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    border: 1px solid #939393;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.hot-offers a .text h4 {
+    color: #212121;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 30px;
+}
+
+.hot-offers a .text p {
+    color: #6c6c6c;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+
+
+
+
+
+.categories-menu {
+    margin-top: 100px;
+    background-color: #f2f2f2;
+}
+
+.nav-link {
+    padding: .5rem 3rem;
+    font-size: 1.3rem;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    filter: invert(100%);
+}
+
+.big-bold {
+    color:  #212121;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    line-height: 36px;
+}
+
+.red {
+    text-transform: uppercase;
+    color: #e53935;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: left;
+    letter-spacing: 1px;
+    line-height: 17px;
+    margin-bottom: 22px;
+    text-align: center;
+}
+
+.price {
+    color:  #212121;
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 48px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+.list {
+    margin-top: 56px;
+}
+
+
+.image {
+    width: 100%;
+}
+
+.detail {
+    margin-top: 80px;
+}
+
+.pagination .active .page-link {
+    background-color: #a3bcdf;
+    border-color: #a3bcdf;
+}
+
+
+
+
+.footer {
+    background-color: #f2f2f2;
+}
+
+.social1{
+    background: url(/static/img/social-links.png);
+    height: 28px;
+    width: 28px;
+    float: left;
+}
+.social2{
+    background: url(/static/img/social-links.png);
+    background-position: -34px 0px;
+    height: 28px;
+    width: 28px;
+    float: left;
+    margin-left: 3px;
+}
+.social3{
+    background: url(/static/img/social-links.png);
+    background-position: -67px 0px;
+    height: 28px;
+    width: 28px;
+    float: left;
+    margin-left: 3px;
+}
+
+
+
+
+
+.contacts {
+    margin-top: 120px;
+}
+
