@@ -24,7 +24,6 @@ a:hover {
 
 
 
-
 .slider {
     height: 630px;
     background-image: url(/static/img/slide2.jpg);
@@ -136,6 +135,18 @@ a:hover {
     text-align: center;
 }
 
+p {
+    text-indent: 30px;
+}
+
+.review {
+    width: 720px;
+}
+
+.avatar img {
+    width: 100%;
+}
+
 
 
 
@@ -198,3 +209,11 @@ a:hover {
     margin-top: 120px;
 }
 
+
+
+
+.login {
+    margin-top: 120px;
+    width: 480px;
+    margin-bottom: 240px;
+}

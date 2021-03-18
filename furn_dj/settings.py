@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'main_app',
+    'auth_app'
 ]
 
 MIDDLEWARE = [
@@ -103,6 +104,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = 'auth_app.ShopUser'
+
+LOGIN_REDIRECT_URL = 'main_app:index'
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/

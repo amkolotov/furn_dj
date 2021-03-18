@@ -1,9 +1,13 @@
 import random
 
-from django.shortcuts import get_object_or_404
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import get_object_or_404, redirect
+from django.urls import reverse_lazy
 from django.views.generic import ListView, TemplateView, DetailView
+from django.views.generic.base import View
 
-from .models import Product, ProductCategory, Contacts
+from .forms import ReviewForm
+from .models import Product, ProductCategory, Contacts, Reviews
 
 
 def get_hot_product():
@@ -11,7 +15,9 @@ def get_hot_product():
 
 
 def get_sample_product(product):
-    return random.sample(list(Product.objects.filter(category=product.category, is_active=True)), k=3)
+    return random.sample(
+        list(Product.objects.filter(category=product.category, is_active=True).exclude(pk=product.id)), k=3
+    )
 
 
 class IndexTemplateView(TemplateView):
@@ -64,8 +70,32 @@ class ProductDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context.update({'sample_products': get_sample_product(context['object'])})
+        context.update({
+            'sample_products': get_sample_product(context['object']),
+            'form': ReviewForm()
+        })
         return context
+
+
+class AddReviewView(LoginRequiredMixin, View):
+    """Добавление отзыва на товар"""
+
+    login_url = reverse_lazy('auth_app:signin')
+
+    def post(self, request, pk):
+        form = ReviewForm(request.POST)
+        product = Product.objects.get(pk=pk)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.product_id = pk
+            review.user = request.user
+            if request.POST.get('parent', None):
+                review.parent_id = int(request.POST.get('parent', None))
+            form.save()
+        return redirect(product.get_absolute_url())
+
+    # def get_redirect_field_name(self):
+    #     pass
 
 
 class ContactsTemplateView(TemplateView):
