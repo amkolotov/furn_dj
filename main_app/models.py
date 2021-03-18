@@ -1,4 +1,7 @@
 from django.db import models
+from django.urls import reverse
+
+from auth_app.models import ShopUser
 
 
 def product_directory_path(instance, filename):
@@ -32,9 +35,16 @@ class Product(models.Model):
     class Meta:
         verbose_name = 'Продукт'
         verbose_name_plural = 'Продукты'
+        ordering = ['price']
 
     def __str__(self):
         return f'{self.name} ({self.category.name})'
+
+    def get_absolute_url(self):
+        return reverse('main_app:product', kwargs={'pk': self.pk})
+
+    def get_parent_reviews(self):
+        return self.reviews_set.filter(parent__isnull=True)
 
 
 class Images(models.Model):
@@ -63,3 +73,19 @@ class Contacts(models.Model):
     class Meta:
         verbose_name = 'Контакт'
         verbose_name_plural = 'Контакты'
+
+
+class Reviews(models.Model):
+    """Отзывы пользователей о товаре"""
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name='Товар')
+    user = models.ForeignKey(ShopUser, on_delete=models.CASCADE, verbose_name='Пользователь')
+    parent = models.ForeignKey('self', on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Родитель')
+    text = models.TextField('Отзыв')
+
+    def __str__(self):
+        return f'{self.user.username} - {self.product}'
+
+    class Meta:
+        verbose_name = 'Отзыв'
+        verbose_name_plural = 'Отзывы'
+

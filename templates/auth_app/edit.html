@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Edit profile
+{% endblock %}
+
+{% block content %}
+
+    <div class="container login">
+        <form action="{% url 'auth_app:edit' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ edit_form.as_p }}
+            {{ profile_form.as_p }}
+            <input type="submit" class="form-control mb-5 btn btn-secondary" value="Сохранить">
+        </form>
+    </div>
+
+{% endblock %}

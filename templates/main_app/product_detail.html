@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block title %}
-    {{ object.name|title }}
+{{ object.name|title }}
 {% endblock %}
 
 {% block content %}
@@ -38,14 +38,10 @@
         <div class="col hot-offer my-auto d-flex justify-content-center">
             <div class="hot-offer-desc text-center">
                 <h3 class="big-bold">{{ object.name|title }}</h3>
-                <div class="description-text">
-                    {{ object.short_desc }}
-                </div>
+                <p>{{ object.short_desc }}</p>
                 <p class="price">{{ object.price|floatformat:0 }}<span> руб</span></p>
+                <p class="text-justify">{{ object.description }}</p>
 
-                <div class="description-text">
-                    {{ object.description }}
-                </div>
                 <a href="#" class="btn btn-success mt-4">купить<i class="fa fa-chevron-right" aria-hidden="true"></i>
                 </a>
             </div>
@@ -64,7 +60,8 @@
 
     <div class="offer row mt-4 py-1">
         <h2 class="col pt-2">Похожие продукты</h2>
-        <h1><a href="{% url 'main_app:category_products' 0 %}" class="btn btn-outline-primary mr-4">Смотреть все</a></h1>
+        <h1><a href="{% url 'main_app:category_products' 0 %}" class="btn btn-outline-primary mr-4">Смотреть все</a>
+        </h1>
     </div>
 
     <div class="row hot-offers my-4">
@@ -87,6 +84,9 @@
         {% endfor %}
 
     </div>
+
+    {% include 'includes/inc_reviews.html' %}
+
 </div>
 
 {% endblock %}
