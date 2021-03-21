@@ -14,12 +14,12 @@
 
         <div class="nav-item">
             <a class="nav-link text-dark" href="{% url 'main_app:categories' %}">
-                {{ category.name|title }}
+                <em>Категория:</em> {{ category.name|title }}
             </a>
         </div>
         <div class="nav-item">
             <a class="nav-link text-dark" href="#">
-                Страница: {{ page_obj.number }}
+                <em>Страница:</em> {{ page_obj.number }}
             </a>
         </div>
 

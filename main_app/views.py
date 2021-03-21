@@ -94,9 +94,6 @@ class AddReviewView(LoginRequiredMixin, View):
             form.save()
         return redirect(product.get_absolute_url())
 
-    # def get_redirect_field_name(self):
-    #     pass
-
 
 class ContactsTemplateView(TemplateView):
     """Вывод контакной информации"""

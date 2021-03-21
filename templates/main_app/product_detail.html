@@ -42,7 +42,8 @@
                 <p class="price">{{ object.price|floatformat:0 }}<span> руб</span></p>
                 <p class="text-justify">{{ object.description }}</p>
 
-                <a href="#" class="btn btn-success mt-4">купить<i class="fa fa-chevron-right" aria-hidden="true"></i>
+                <a href="{% url 'basket_app:add' object.pk %}" class="btn btn-success mt-4">
+                    в корзину<i class="fa fa-chevron-right" aria-hidden="true"></i>
                 </a>
             </div>
         </div>

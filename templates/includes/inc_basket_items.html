@@ -1,0 +1,57 @@
+{% load static %}
+
+{% for object in basket %}
+<hr>
+<div class="row align-items-center text-center">
+    <div class="col-1">
+        {{ forloop.counter }}
+    </div>
+    <div class="col-2">
+        <img src="{% get_media_prefix %}{{ object.product.images_set.first.upload }}" alt="object.product.name">
+    </div>
+    <div class="col-3">
+        {{ object.product.name|title }}
+    </div>
+
+    <div class="col-1">
+        {{ object.product.price }}
+    </div>
+    <div class="col-1">
+        <input type="number" value="{{ object.quantity }}" min="0" name="{{ object.pk }}" class="form-control">
+    </div>
+    <div class="col-2">
+        {{ object.product_costs }}
+    </div>
+    <div class="col-2">
+        <button class="btn btn btn-outline-danger">
+            <a href="{% url 'basket_app:delete' object.pk %}" class="text-dark">удалить</a>
+        </button>
+    </div>
+</div>
+
+{% endfor %}
+
+<hr>
+
+{% if basket %}
+
+<div class="row justify-content-end mt-5">
+    <h4>В корзине {{ basket.first.total_quantity }} товаров общей стоимостью
+        <strong>{{ basket.first.total_costs }}</strong>&nbspруб</h4>
+</div>
+<div class="row justify-content-center mt-5">
+    <div class="col-6">
+        <input type="submit" class="form-control btn btn-success" value="Отправить заказ">
+    </div>
+</div>
+
+{% else %}
+
+<div class="row justify-content-center mt-5">
+    <h4>В корзине нет товаров</h4>
+</div>
+
+{% endif %}
+
+
+
