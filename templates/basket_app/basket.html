@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+Корзина
+{% endblock %}
+
+{% block content %}
+
+
+<div class="container basket mb-5">
+
+    <div class="row justify-content-center">
+            <h3><em>Ваша корзина, {% if user.username %}{{ user }}{% else %}Пользователь{% endif %}</em></h3>
+    </div>
+    <hr>
+
+    <div class="row text-center align-items-center font-weight-bold">
+        <div class="col-1">
+            № п/п
+        </div>
+        <div class="col-2">
+            Фото
+        </div>
+        <div class="col-3">
+            Наименование
+        </div>
+
+        <div class="col-1">
+            Цена
+        </div>
+        <div class="col-1">
+            Количество
+        </div>
+        <div class="col-2">
+            Стоимость
+        </div>
+        <div class="col-2">
+            Удаление
+        </div>
+    </div>
+
+    <div class="inc_basket_items">
+    {% include 'includes/inc_basket_items.html' %}
+    </div>
+</div>
+
+<script src="{% static 'js/basket_scripts.js' %}"></script>
+
+
+{% endblock %}

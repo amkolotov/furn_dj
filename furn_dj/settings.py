@@ -39,7 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'main_app',
-    'auth_app'
+    'auth_app',
+    'basket_app',
+    
+    'phonenumber_field',
 ]
 
 MIDDLEWARE = [
@@ -67,6 +70,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
+                'basket_app.context_processors.basket'
             ],
         },
     },
@@ -112,6 +117,8 @@ LOGIN_REDIRECT_URL = 'main_app:index'
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
 LANGUAGE_CODE = 'ru'
+
+USE_THOUSAND_SEPARATOR = True
 
 TIME_ZONE = 'UTC'
 

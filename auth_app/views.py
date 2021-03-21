@@ -9,22 +9,30 @@ from auth_app.forms import ShopUserLoginForm, ShopUserProfileEditForm, ShopUserC
 
 
 class SignUpView(CreateView):
+    """Регистрация нового пользователя"""
     template_name = 'auth_app/signup.html'
     form_class = ShopUserCreationForm
     success_url = reverse_lazy('auth_app:signin')
 
 
 class SignInView(LoginView):
+    """Вход в учетную запись пользователя"""
     authentication_form = ShopUserLoginForm
     template_name = 'auth_app/signin.html'
 
 
 class SignOutView(LogoutView):
-    next_page = 'main_app:index'
+    """Выход из учетной записи пользователя"""
+    def get_next_page(self):
+        next_page = super().get_next_page()
+        if 'edit' in next_page:
+            next_page = '/'
+        return next_page
 
 
 @transaction.atomic
 def edit(request):
+    """Редактирование профиля пользователя"""
     if request.method == 'POST':
         edit_form = ShopUserEditForm(request.POST, instance=request.user)
         profile_form = ShopUserProfileEditForm(request.POST, request.FILES, instance=request.user.shopuserprofile)

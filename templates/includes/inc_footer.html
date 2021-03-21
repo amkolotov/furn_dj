@@ -2,17 +2,24 @@
     <div class="row d-flex justify-content-between text-center">
         <div class="col">
             <h3>Контакты</h3>
+            <h5><a class="text-dark" href="{% url 'main_app:contacts' %}">Екатеринбург</a></h5>
+            <h5><a class="text-dark" href="{% url 'main_app:contacts' %}">Москва</a></h5>
+            <h5><a class="text-dark" href="{% url 'main_app:contacts' %}">Хабаровск</a>
         </div>
+        </h5>
         <div class="col">
             <h3>Полезная информация</h3>
+            <p class="mt-4">В нашем магазине вы сможете приобрести качественную мебель по низким ценам</p>
         </div>
         <div class="col">
             <h3>Оставайтесь на связи</h3>
             <p>Подписаться на новости и рассылки</p>
-            <form>
-                <input type="email" name="email" placeholder="ваш email">
-                <button type="button" class="btn btn-light">Отправить</button>
-            </form>
+            <div class="form-group row justify-content-center">
+                <form class="form-inline">
+                    <input class="form-control" type="email" name="email" placeholder="ваш email">
+                    <button type="button" class="btn btn-light">Отправить</button>
+                </form>
+            </div>
         </div>
     </div>
 

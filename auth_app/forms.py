@@ -5,6 +5,7 @@ from auth_app.models import ShopUser, ShopUserProfile
 
 
 class ShopUserLoginForm(AuthenticationForm):
+    """Форма входа в учетную запись пользователя"""
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         for field_name, field in self.fields.items():
@@ -12,6 +13,7 @@ class ShopUserLoginForm(AuthenticationForm):
 
 
 class ShopUserCreationForm(UserCreationForm):
+    """Форма создания нового пользователя"""
     class Meta:
         model = ShopUser
         fields = ('username', 'email', 'password1', 'password2')
@@ -24,6 +26,7 @@ class ShopUserCreationForm(UserCreationForm):
 
 
 class ShopUserEditForm(UserChangeForm):
+    """Форма редактированя учетной записи пользователя"""
     class Meta:
         model = ShopUser
         fields = ('username', 'email', 'password')
@@ -38,9 +41,10 @@ class ShopUserEditForm(UserChangeForm):
 
 
 class ShopUserProfileEditForm(UserChangeForm):
+    """Форма редактирования профиля пользователя"""
     class Meta:
         model = ShopUserProfile
-        fields = '__all__'
+        exclude = ('user',)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

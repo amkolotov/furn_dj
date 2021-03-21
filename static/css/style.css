@@ -16,6 +16,30 @@ a:hover {
     background-color: #f2f2f2;
 }
 
+.inc_basket {
+    width: 400px;
+    background-color: white;
+    position: absolute;
+    right: 30px;
+    top: 60px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.62);
+    border-radius: 5px;
+    display: none;
+}
+
+#basket:hover>.inc_basket {
+    display: block;
+}
+
+.header {
+    background-color: #d1d1dd;
+    border-radius: 5px 5px 0 0 ;
+}
+
+.inc_basket img {
+    width: 100%;
+}
+
 .marketing {
     margin-top: 56px;
 }
@@ -72,6 +96,7 @@ a:hover {
     text-align: center;
     border: 1px solid #939393;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
 }
 
 .hot-offers a .text h4 {
@@ -170,6 +195,24 @@ p {
     background-color: #a3bcdf;
     border-color: #a3bcdf;
 }
+
+
+
+
+
+.basket {
+    margin-top: 86px;
+}
+
+.basket img {
+    width: 100%;
+}
+
+.basket input {
+    width:100%;
+}
+
+
 
 
 

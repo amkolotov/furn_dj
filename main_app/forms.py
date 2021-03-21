@@ -4,6 +4,7 @@ from .models import Reviews
 
 
 class ReviewForm(forms.ModelForm):
+    """Форма написания отзыва к товару"""
     class Meta:
         model = Reviews
         fields = ('text',)
