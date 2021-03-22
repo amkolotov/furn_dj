@@ -24,7 +24,7 @@ class ProductCategory(models.Model):
 
 class Product(models.Model):
     """Продукты"""
-    category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE)
+    category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE, verbose_name='Категория')
     name = models.CharField(max_length=64, unique=True, verbose_name='Наименование продукта')
     short_desc = models.CharField(max_length=128, blank=True, verbose_name='Краткое описание')
     description = models.TextField('Описание', blank=True)
@@ -49,8 +49,8 @@ class Product(models.Model):
 
 class Images(models.Model):
     """Изображения продуктов"""
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    upload = models.ImageField(upload_to=product_directory_path)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name='Продукт')
+    upload = models.ImageField(upload_to=product_directory_path, verbose_name='url')
 
     class Meta:
         verbose_name = 'Фотография продукта'
