@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'main_app',
     'auth_app',
     'basket_app',
-    
+    'order_app',
+
     'phonenumber_field',
 ]
 
