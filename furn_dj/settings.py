@@ -113,3 +113,8 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = BASE_DIR / 'media'
+
+try:
+    from .settings_local import *
+except ImportError:
+    from .settings_prod import *
