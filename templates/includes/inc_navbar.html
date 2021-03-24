@@ -1,7 +1,13 @@
 {% load static %}
 
 <div class="navbar navbar-light fixed-top">
-    <a class="navbar-brand my-0 mr-md-auto" href="{% url 'main_app:index' %}"><img src="{% static 'img/logo.png' %}" alt="logo"></a>
+    <div class="navbar-brand my-0 mr-md-auto d-flex">
+        <a href="{% url 'main_app:index' %}"><img src="{% static 'img/logo.png' %}" alt="logo"></a>
+        <form action="{% url 'main_app:search' %}" class="form-inline ml-4">
+            <input type="text" class="form-control" placeholder="Поиск" name="search">
+            <button type="submit" class="btn btn-outline-dark ml-1">Найти</button>
+        </form>
+    </div>
     <nav class="my-2 my-md-0 mr-md-3">
 
         <a class="p-2 text-dark" href="{% url 'main_app:index' %}">Главная</a>

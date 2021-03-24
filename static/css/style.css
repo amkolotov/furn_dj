@@ -10,6 +10,10 @@ html, body {
 
 body {
     font-family: 'Roboto', sans-serif;
+    font-family: 'Comfortaa', cursive;
+    font-family: 'Open Sans', sans-serif;
+    color: #2f2f2f;
+
     display: flex;
     flex-direction: column;
 }
@@ -20,6 +24,7 @@ body {
 
 a:hover {
     color: black;
+    text-decoration: none;
 }
 
 .navbar {
@@ -60,23 +65,40 @@ a:hover {
 
 .slider {
     height: 630px;
-    background-image: url(/static/img/slide2.jpg);
+    background-image: url(/static/img/interior4.jpg);
     background-size: 100%;
-    opacity: 0.9;
 }
 
 .slider-text {
-    color: #1e1515;
-    margin-left: 14rem
+    margin-left: 14rem;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: #454343;
+    text-shadow: 3px 3px 0px rgba(0,0,0,0.2);
+
 }
 
 .slider-text h1 {
     margin: 0;
+    letter-spacing: 16px;
+    text-shadow: 3px 3px 0px rgba(0,0,0,0.2);
 }
+
+.slider-text h2 {
+    margin: 0;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+}
+
 
 
 .offer {
     background-color: #f2f2f2;
+}
+
+.offer h2 {
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+    color: #454343;
 }
 
 .hot-offers {
@@ -148,6 +170,8 @@ a:hover {
     font-weight: 700;
     margin-bottom: 24px;
     line-height: 36px;
+    letter-spacing:4px;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
 }
 
 .red {
@@ -180,6 +204,7 @@ p {
 
 .avatar img {
     width: 100%;
+    border-radius: 5px;
 }
 
 
@@ -237,6 +262,10 @@ p {
 .footer {
     background-color: #f2f2f2;
     flex-shrink: 0;
+    font-family: 'Open Sans', sans-serif;
+    color: #2f2f2f;
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+
 }
 
 .social1{
@@ -268,7 +297,9 @@ p {
 
 .contacts {
     margin-top: 120px;
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
 }
+
 
 
 

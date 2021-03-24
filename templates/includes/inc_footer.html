@@ -1,19 +1,18 @@
 <footer class="footer container-fluid mt-auto pt-4">
     <div class="row d-flex justify-content-between text-center">
         <div class="col">
-            <h3>Контакты</h3>
+            <h3 class="mb-2">Контакты</h3>
             <h5><a class="text-dark" href="{% url 'main_app:contacts' %}">Екатеринбург</a></h5>
             <h5><a class="text-dark" href="{% url 'main_app:contacts' %}">Москва</a></h5>
-            <h5><a class="text-dark" href="{% url 'main_app:contacts' %}">Хабаровск</a>
+            <h5><a class="text-dark" href="{% url 'main_app:contacts' %}">Хабаровск</a></h5>
         </div>
-        </h5>
         <div class="col">
             <h3>Полезная информация</h3>
             <p class="mt-4">В нашем магазине вы сможете приобрести качественную мебель по низким ценам</p>
         </div>
         <div class="col">
             <h3>Оставайтесь на связи</h3>
-            <p>Подписаться на новости и рассылки</p>
+            <h5 class="mt-4">Подписаться на новости и рассылки</h5>
             <div class="form-group row justify-content-center">
                 <form class="form-inline">
                     <input class="form-control" type="email" name="email" placeholder="ваш email">
@@ -23,7 +22,7 @@
         </div>
     </div>
 
-    <div class="row d-flex justify-content-between text-center mt-4 pb-4">
+    <div class="row d-flex justify-content-between text-center mt-2 pb-4">
         <div class="col"><p>&copy; Interior {% now 'Y' %}</p></div>
         <div class="col  d-flex justify-content-center">
             <div class="row">

@@ -18,7 +18,6 @@ class Order(models.Model):
         (READY, 'Готов к выдаче'),
         (DONE, 'Завершен'),
         (CANCEL, 'Отменен')
-
     )
 
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name='Пользователь')
@@ -36,6 +35,7 @@ class Order(models.Model):
 
 
 class OrderItem(models.Model):
+    """Товар в заказе"""
     order = models.ForeignKey(Order, on_delete=models.CASCADE, verbose_name='Заказ')
     product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name='Товар')
     quantity = models.PositiveIntegerField('Количество', default=0)
@@ -46,4 +46,3 @@ class OrderItem(models.Model):
 
     def __str__(self):
         return self.product.name
-

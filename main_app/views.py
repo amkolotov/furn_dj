@@ -2,7 +2,7 @@ import random
 
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import get_object_or_404, redirect
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, TemplateView, DetailView
 from django.views.generic.base import View
 
@@ -43,7 +43,6 @@ class CategoriesTemplateView(TemplateView):
 
 class ProductListView(ListView):
     """Вывод продуктов определенной категории"""
-
     paginate_by = 4
 
     def get_queryset(self):
@@ -77,9 +76,24 @@ class ProductDetailView(DetailView):
         return context
 
 
+class SearchView(View):
+    """Обработка поискового запроса"""
+
+    def get(self, request):
+        search = request.GET.get('search')
+        if search:
+            category = ProductCategory.objects.filter(name__icontains=search)
+            if category:
+                return redirect(reverse('main_app:category_products', args=[category.first().pk]))
+            product = Product.objects.filter(name__icontains=search)
+            if product:
+                return redirect(reverse('main_app:product', args=[product.first().pk]))
+
+        return redirect(reverse('main_app:category_products', args=[0]))
+
+
 class AddReviewView(LoginRequiredMixin, View):
     """Добавление отзыва на товар"""
-
     login_url = reverse_lazy('auth_app:signin')
 
     def post(self, request, pk):
@@ -99,3 +113,5 @@ class ContactsTemplateView(TemplateView):
     """Вывод контакной информации"""
     template_name = 'main_app/contacts.html'
     extra_context = {'contacts': Contacts.objects.all()}
+
+

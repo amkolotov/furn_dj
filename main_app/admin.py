@@ -10,6 +10,7 @@ admin.site.register(Contacts)
 
 
 class ProductImagesInline(admin.TabularInline):
+    """Изображение товара"""
     model = Images
     extra = 1
     readonly_fields = ('get_image',)
@@ -27,6 +28,7 @@ class ReviewInlines(admin.TabularInline):
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
+    """Администрирование товаров"""
     list_display = ('category', 'name', 'price', 'quantity', 'is_active')
     list_display_links = ('category', 'name')
     inlines = [ProductImagesInline, ReviewInlines]

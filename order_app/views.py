@@ -12,8 +12,7 @@ from .models import OrderItem, Order
 
 
 class OrderCreateView(LoginRequiredMixin, View):
-    """Создание заказа пользоваьеля"""
-
+    """Создание заказа пользователя"""
     login_url = reverse_lazy('auth_app:signin')
 
     @transaction.atomic

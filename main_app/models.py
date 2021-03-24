@@ -9,7 +9,7 @@ def product_directory_path(instance, filename):
 
 
 class ProductCategory(models.Model):
-    """Категории продуктов"""
+    """Категории товаров"""
     name = models.CharField(max_length=64, unique=True, verbose_name='Категория')
     description = models.CharField(max_length=128, blank=True, verbose_name='Описание')
     is_active = models.BooleanField(default=True, db_index=True, verbose_name='Активна')
@@ -23,18 +23,18 @@ class ProductCategory(models.Model):
 
 
 class Product(models.Model):
-    """Продукты"""
+    """Товары"""
     category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE, verbose_name='Категория')
-    name = models.CharField(max_length=64, unique=True, verbose_name='Наименование продукта')
+    name = models.CharField(max_length=64, unique=True, verbose_name='Наименование товара')
     short_desc = models.CharField(max_length=128, blank=True, verbose_name='Краткое описание')
     description = models.TextField('Описание', blank=True)
     price = models.DecimalField('Цена', max_digits=8, decimal_places=2, default=0)
     quantity = models.PositiveSmallIntegerField('Количество', default=0)
-    is_active = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=True, db_index=True, verbose_name='Активен')
 
     class Meta:
-        verbose_name = 'Продукт'
-        verbose_name_plural = 'Продукты'
+        verbose_name = 'Товар'
+        verbose_name_plural = 'Товары'
         ordering = ['price']
 
     def __str__(self):
@@ -48,13 +48,13 @@ class Product(models.Model):
 
 
 class Images(models.Model):
-    """Изображения продуктов"""
-    product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name='Продукт')
+    """Изображения товаров"""
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name='Товар')
     upload = models.ImageField(upload_to=product_directory_path, verbose_name='url')
 
     class Meta:
-        verbose_name = 'Фотография продукта'
-        verbose_name_plural = 'Фотографии продуктов'
+        verbose_name = 'Фотография товара'
+        verbose_name_plural = 'Фотографии товара'
 
     def __str__(self):
         return f'Image {self.pk} ({self.product})'
