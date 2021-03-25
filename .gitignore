@@ -1,5 +1,5 @@
 .idea/
-configs/
+config/
 settings_prod.py
 
 !*media/.gitkeep
