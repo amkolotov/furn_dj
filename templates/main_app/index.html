@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% load static %}
+{% load old_price %}
 
 {% block title %}
 Главная страница
@@ -13,36 +14,108 @@
 
 <div class="container">
 
-    <a href="{% url 'main_app:categories' %}">
-        <div class="slider row mt-4">
-            <div class="slider-text col mt-4">
-                <h1 class="font-weight-bold">INTERIOR</h1>
-                <h2 class="text-center font-italic">Мебель для </h2>
-                <h2 class="text-center font-italic">комфортной жизни</h2>
+    <div class="row mt-5 slider">
+        <div class="col-md-3 tile">
+            <a class="text-dark" href="{% url 'main_app:categories' %}">
+                <div class="sale">
+                    <img src="{% static 'img/sale.png' %}" alt="sale">
+                    <span class="sale-text">Скидка</span>
+                    <span class="sale-proc">50%</span>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <div class="row mb-3">
+                <div class="col tile">
+                    <a href="{% url 'main_app:category_products' 1 %}">
+                        <div class="tile-category">
+                            <img src="{% static 'img/cat_table.png' %}" alt="table">
+                            <div class="overlay">
+                                <span class="tile-category-text">Столы</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col tile">
+                    <a href="{% url 'main_app:category_products' 3 %}">
+                        <div class="tile-category">
+                            <img src="{% static 'img/cat_sofa.png' %}" alt="sofa">
+                            <div class="overlay">
+                                <span class="tile-category-text">Диваны</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
-    </a>
+        <div class="col-md-6">
+            <div class="row mb-3">
+                <div class="col-md-6 tile">
+                    <a href="{% url 'main_app:category_products' 4 %}">
+                        <div class="tile-category">
+                            <img src="{% static 'img/cat_wardrobe.png' %}" alt="wardrobe">
+                            <div class="overlay">
+                                <div class="tile-category-text">
+                                    <span>Шкафы</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6 tile">
+                    <div class="tile-category">
+                        <a href="{% url 'main_app:category_products' 2 %}">
+                            <img src="{% static 'img/cat_chair.png' %}" alt="chair">
+                            <div class="overlay">
+                                <span class="tile-category-text">Кресла</span>
+                            </div>
+                        </a>
+                    </div>
 
-    <div class="offer row mt-4 py-1">
-        <h2 class="col pt-2">Специальные предложения</h2>
-        <h1><a class="btn btn-outline-primary mr-4" href="{% url 'main_app:category_products' 0 %}">
-            Смотреть все</a></h1>
+                </div>
+            </div>
+            <div class="row">
+                <a class="text-dark" href="{% url 'main_app:categories' %}">
+                    <div class="col deal tile">
+                        <img src="{% static 'img/deal.png' %}" alt="table">
+                        <span class="deal-title">Предложение дня!</span>
+                        <span class="deal-text">успевайте приобрести по лучшей цене </span>
+                        <span class="deal-button">перейти ></span>
+                    </div>
+                </a>
+            </div>
+        </div>
     </div>
 
-    <div class="row hot-offers my-4">
 
+    <div class="offer row my-5 pl-3 pb-1">
+        <a href="{% url 'main_app:category_products' 0 %}"><span>Специальные предложения</span></a>
+    </div>
+
+    <div class="row cards mb-4">
         {% for product in objects %}
-        <div class="col-4 d-flex justify-content-center">
+        <div class="col-md-3 ">
             <a href="{% url 'main_app:product' product.pk %}">
-                <img class="product-img"
-                     src="{% get_media_prefix %}{{ product.images_set.first.upload }}"
-                     alt="{{ product.name }}"
-                >
-                <div class="text">
-                    <div class="my-auto">
-                        <h4>{{ product.name|title }}</h4>
-                        <img class="my-2" src="{% static 'img/icon-hover.png' %}" alt="img">
-                        <p class="mx-4">{{ product.short_desc }}</p>
+                <div class="product-card">
+                    <div class="img-plus pt-2">
+
+                        <img src="{% static 'img/plus.svg' %}" alt="plus" class="plus">
+
+                        <img class="card-img rounded mx-auto d-block py-4"
+                             src="{% get_media_prefix %}{{ product.images_set.first.upload }}"
+                             alt="{{ product.name }}"
+                        >
+                    </div>
+                    <div class="ml-4 mb-2">
+                        <span class="card-name">{{ product.name|title }}</span>
+                    </div>
+                    <div class="ml-5">
+                        <span class="card-price">{{ product.price|floatformat:0 }}₽</span>
+                    </div>
+                    <div class="text-center pb-4 mb-4">
+                        <span class="card-old-price">{{ product.price|old_price|floatformat:0 }}₽</span>
                     </div>
                 </div>
             </a>

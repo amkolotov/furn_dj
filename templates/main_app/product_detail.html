@@ -59,25 +59,32 @@
 
     </div>
 
-    <div class="offer row mt-4 py-1">
-        <h2 class="col pt-2">Похожие продукты</h2>
-        <h1><a href="{% url 'main_app:category_products' 0 %}" class="btn btn-outline-primary mr-4">Смотреть все</a>
-        </h1>
+    <div class="offer row my-5 pl-3 pb-1">
+        <a href="{% url 'main_app:category_products' 0 %}"><span>Похожие продукты</span></a>
     </div>
 
-    <div class="row hot-offers my-4">
-
+    <div class="row cards mb-4">
         {% for product in sample_products %}
-        <div class="col-4 d-flex justify-content-center">
+        <div class="col-md-3 ">
             <a href="{% url 'main_app:product' product.pk %}">
-                <img class="product-img"
-                     src="{% get_media_prefix %}{{ product.images_set.first.upload }}"
-                     alt="{{ product.name }}">
-                <div class="text">
-                    <div class="my-auto">
-                        <h4>{{ product.name|title }}</h4>
-                        <img class="my-2" src="{% static 'img/icon-hover.png' %}" alt="img">
-                        <p class="mx-4">{{ product.short_desc }}</p>
+                <div class="product-card">
+                    <div class="img-plus pt-2">
+
+                        <img src="{% static 'img/plus.svg' %}" alt="plus" class="plus">
+
+                        <img class="card-img rounded mx-auto d-block py-4"
+                             src="{% get_media_prefix %}{{ product.images_set.first.upload }}"
+                             alt="{{ product.name }}"
+                        >
+                    </div>
+                    <div class="ml-4 mb-2">
+                        <span class="card-name">{{ product.name|title }}</span>
+                    </div>
+                    <div class="ml-5">
+                        <span class="card-price">{{ product.price|floatformat:0 }}₽</span>
+                    </div>
+                    <div class="text-center pb-4 mb-4">
+                        <span class="card-old-price">{{ product.price|floatformat:0 }}₽</span>
                     </div>
                 </div>
             </a>

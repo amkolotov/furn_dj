@@ -3,7 +3,7 @@ from django.utils.safestring import mark_safe
 
 from .models import ProductCategory, Product, Contacts, Images, Reviews
 
-admin.site.register(ProductCategory)
+# admin.site.register(ProductCategory)
 # admin.site.register(Images)
 admin.site.register(Contacts)
 # admin.site.register(Reviews)
@@ -33,5 +33,12 @@ class ProductAdmin(admin.ModelAdmin):
     list_display_links = ('category', 'name')
     inlines = [ProductImagesInline, ReviewInlines]
     save_on_top = True
+
+
+@admin.register(ProductCategory)
+class ProductAdmin(admin.ModelAdmin):
+    """Администрирование категорий"""
+    list_display = ('id', 'name', 'is_active')
+    list_display_links = ('id', 'name')
 
 
