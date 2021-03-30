@@ -1,38 +1,95 @@
-<footer class="footer container-fluid mt-auto pt-4">
-    <div class="row d-flex justify-content-between text-center">
-        <div class="col">
-            <h3 class="mb-2">Контакты</h3>
-            <h5><a class="text-dark" href="{% url 'main_app:contacts' %}">Екатеринбург</a></h5>
-            <h5><a class="text-dark" href="{% url 'main_app:contacts' %}">Москва</a></h5>
-            <h5><a class="text-dark" href="{% url 'main_app:contacts' %}">Хабаровск</a></h5>
-        </div>
-        <div class="col">
-            <h3>Полезная информация</h3>
-            <p class="mt-4">В нашем магазине вы сможете приобрести качественную мебель по низким ценам</p>
-        </div>
-        <div class="col">
-            <h3>Оставайтесь на связи</h3>
-            <h5 class="mt-4">Подписаться на новости и рассылки</h5>
-            <div class="form-group row justify-content-center">
-                <form class="form-inline">
-                    <input class="form-control" type="email" name="email" placeholder="ваш email">
-                    <button type="button" class="btn btn-light">Отправить</button>
-                </form>
-            </div>
-        </div>
-    </div>
+{% load static %}
 
-    <div class="row d-flex justify-content-between text-center mt-2 pb-4">
-        <div class="col"><p>&copy; Interior {% now 'Y' %}</p></div>
-        <div class="col  d-flex justify-content-center">
+<footer class="footer">
+    <div class="mail">
+        <div class="container">
             <div class="row">
-                <div class="col"><a href="#" class="social1"></a></div>
-                <div class="col"><a href="#" class="social2"></a></div>
-                <div class="col"><a href="#" class="social3"></a></div>
+                <div class="col text-right mr-5">
+                    <p class="h">Подписывайтесь на рассылку</p>
+                    <p class="p">Получайте новые каталоги и предложения ежемесячно</p>
+                    <p class="p2">Мы считаем, что отличный дизайн и качество можно получить,</p>
+                    <p class="p2">работая с лучшими материалами.</p>
+                    <div class="form-group row justify-content-end">
+                        <form class="form-inline">
+                            <input class="form-control" type="email" name="email" placeholder="E-mail">
+                            <button type="button" class="btn btn-dark ml-2">Подписаться</button>
+                        </form>
+                    </div>
+
+                </div>
             </div>
         </div>
-        <div class="col"><p>Конфиденциальность &amp; Cookies</p></div>
-
     </div>
+    <div class="foot">
+    <div class="div contact">
+        <div class="container label">
+            <span>Interior</span>
+            <p>МАГАЗИН ИНТЕРЬЕРНЫХ РЕШЕНИЙ</p>
+        </div>
+        <hr>
+        <div class="container table">
+            <div class="row title">
+                <div class="col-3">
+                    <span>Контакты</span>
+                </div>
+                <div class="col-3">
+                    <span>Категории</span>
+                </div>
+                <div class="col-3">
+                    <span>Сервис и подержка</span>
+                </div>
+                <div class="col-3">
+                    <span>О компании</span>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <p>г. Москва, ул. Ленина, д. 10</p>
+                    <span class="phone">8 800 888 88 88</span>
+                    <p>info@shop.ru</p>
+                    <div class="social mt-4">
+                        <img src="{% static 'img/wats.svg' %}" alt="wa" class="mr-4">
+                        <img src="{% static 'img/tel.svg' %}" alt="tg">
+                    </div>
+                </div>
+                <div class="col-3">
+                    {% for category in categories %}
+                    <a href="{% url 'main_app:category_products' category.pk %}">
+                        <p>{{ category.name.title }}</p>
+                    </a>
+                    {% endfor %}
+                </div>
+                <div class="col-3">
+                    <a href="{% url 'main_app:contacts' %}"><p>Оплата</p></a>
+                    <a href="{% url 'main_app:contacts' %}"><p>Возврат</p></a>
+                    <a href="{% url 'main_app:contacts' %}"><p>Доставка</p></a>
+                    <a href="{% url 'main_app:contacts' %}"><p>Гарантия</p></a>
+                </div>
+                <div class="col-3">
+                    <a href="{% url 'main_app:contacts' %}"><p>О нас</p></a>
+                    <a href="{% url 'main_app:contacts' %}"><p>Реквизиты</p></a>
+                    <a href="{% url 'main_app:contacts' %}"><p>Контакты</p></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="container pb-2 payment">
+        <div class="row justify-content-end">
+            <img src="{% static 'img/payments.png' %}" alt="payments">
+        </div>
+    </div>
+    </div>
+    <div class="basement">
+        <div class="container">
+            <div class="years d-flex justify-content-between">
+                <p><b>© 2018-2021 ООО “Интерьерные решения”.</b> Копирование запрещено</p>
+                <p>Политика конфиденциальности</p>
+
+            </div>
+        </div>
+    </div>
+
 
 </footer>

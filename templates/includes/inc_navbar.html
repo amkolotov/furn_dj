@@ -1,37 +1,70 @@
 {% load static %}
 
-<div class="navbar navbar-light fixed-top">
-    <div class="navbar-brand my-0 mr-md-auto d-flex">
-        <a href="{% url 'main_app:index' %}"><img src="{% static 'img/logo.png' %}" alt="logo"></a>
-        <form action="{% url 'main_app:search' %}" class="form-inline ml-4">
-            <input type="text" class="form-control" placeholder="Поиск" name="search">
-            <button type="submit" class="btn btn-outline-dark ml-1">Найти</button>
-        </form>
+<div class="container-fluid fixed-top p-0">
+
+    <div class="container-fluid brand">
+        <nav class="container h-100">
+            <div class="row h-100">
+                <div class="col-md-3 col-sm-6 label m-auto">
+                    <span>Interior</span>
+                </div>
+                <div class="col-md-4 col-sm-6 m-auto">
+
+                    <form action="{% url 'main_app:search' %}" class="form-inline">
+                        <img src="{% static 'img/search.svg' %}" alt="search">
+                        <input type="text" name="search">
+                    </form>
+                </div>
+                <div class="col-md-3 col-sm-6 m-auto text-center"><span class="phone align-middle">8 800 888 88 88</span></div>
+                <div class="col-md-2 col-sm-6 m-auto"><span class="align-middle">info@shop.ru</span></div>
+                {% if user.is_superuser %}
+                <div class="col m-auto">
+                    <a class="p-2 text-dark" href="{% url 'admin:index' %}">Админка</a>
+                </div>
+                {% endif %}
+            </div>
+        </nav>
     </div>
-    <nav class="my-2 my-md-0 mr-md-3">
+    <div class="container-fluid menu">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-md-9 col-sm-12 m-auto d-flex justify-content-between">
+                    <a class="p-2 text-dark" href="{% url 'main_app:index' %}">Главная</a>
+                    <a class="p-2 text-dark" href="{% url 'main_app:contacts' %}">О нас</a>
+                    <a class="p-2 text-dark" href="{% url 'main_app:category_products' 0 %}">Каталог</a>
+                    <a class="p-2 text-dark" href="{% url 'main_app:contacts' %}">Доставка</a>
+                    <a class="p-2 text-dark" href="{% url 'main_app:contacts' %}">Оплата</a>
+                    <a class="p-2 text-dark" href="{% url 'main_app:contacts' %}">Гарантии</a>
+                    <a class="p-2 text-dark" href="{% url 'main_app:contacts' %}">Контакты</a>
+                </div>
+                <div class="col-md-1 col-sm-6 m-auto d-flex justify-content-end">
+                    <a class="p-2 text-dark d-flex" href="{% url 'basket_app:basket' %}" id="basket">
+                        <img src="{% static 'img/frame-basket.svg' %}" alt="search">
+                        {% if basket.count %}
+                        <div class="basket-count ml-2 text-center">{{ basket.first.total_quantity }}</div>
+                        {% endif %}
+                        {% include 'includes/inc_basket.html' %}
+                    </a>
+                </div>
+                <div class="col-md-2 col-sm-6 m-auto text-right">
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'auth_app:edit' %}">
+                        <img class="ava" src="{% get_media_prefix %}{{ user.shopuserprofile.avatar }}" alt="avatar">
+                    </a>
+                    <a class="p-2 text-dark" href="{% url 'auth_app:signout' %}?next={{request.path}}">Выйти</a>
+                    {% else %}
+                    <a href="{% url 'auth_app:signin' %}?next={{request.path}}">
+                        <img src="{% static 'img/frame-ava.svg' %}" alt="ava">
+                    </a>
+                    <a class="p-2 text-dark" href="{% url 'auth_app:signin' %}?next={{request.path}}">Войти</a>
+                    {% endif %}
+                </div>
 
-        <a class="p-2 text-dark" href="{% url 'main_app:index' %}">Главная</a>
-        <a class="p-2 text-dark" href="{% url 'main_app:categories' %}">Категории</a>
-        <a class="p-2 text-dark" href="{% url 'main_app:contacts' %}">Контакты</a>
+            </div>
 
-        <a class="p-2 text-dark" href="{% url 'basket_app:basket' %}" id="basket">
-            Корзина
-            {% include 'includes/inc_basket.html' %}
-        </a>
+        </div>
+    </div>
 
-        {% if user.is_authenticated %}
-        <a class="p-2 text-dark" href="{% url 'auth_app:edit' %}">{{ user.username }}</a>
-            {% if user.is_superuser %}
-            <a class="p-2 text-dark" href="{% url 'admin:index' %}">Админка</a>
-            {% endif %}
-        {% endif %}
 
-    </nav>
-
-    {% if user.is_authenticated %}
-    <a class="btn btn-outline-primary" href="{% url 'auth_app:signout' %}?next={{request.path}}">Выйти</a>
-    {% else %}
-    <a class="btn btn-outline-primary" href="{% url 'auth_app:signin' %}?next={{request.path}}">Войти</a>
-    {% endif %}
 </div>
 

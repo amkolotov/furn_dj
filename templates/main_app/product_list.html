@@ -10,7 +10,7 @@
 
 <div class="container list">
 
-    <div class="nav justify-content-center categories-menu">
+    <div class="nav justify-content-around categories-menu">
 
         <div class="nav-item">
             <a class="nav-link text-dark" href="{% url 'main_app:categories' %}">
@@ -29,16 +29,17 @@
     <div class="row">
 
         {% for product in object_list %}
-        <div class="col-6 d-flex justify-content-center hot-offers my-4">
+        <div class="col-6 d-flex justify-content-center hot-offers my-5">
             <a href="{% url 'main_app:product' product.pk %}">
-                <img class="product-img"
+                <img class="product-img mt-4"
                      src="{% get_media_prefix %}{{ product.images_set.first.upload }}"
                      alt="{{ product.name }}">
-                <div class="text">
-                    <div class="my-auto">
+                <div class="over">
+                    <img src="{% static 'img/plus.svg' %}" alt="plus" class="plus">
+                    <div class="text px-4">
                         <h4>{{ product.name|title }}</h4>
-                        <img class="my-2" src="{% static 'img/icon-hover.png' %}" alt="img">
-                        <p class="mx-4">{{ product.short_desc }}</p>
+                        <p class="">{{ product.short_desc }}</p>
+                        <h5 class="mt-2 text-right">{{ product.price|floatformat:0 }} руб</h5>
                     </div>
                 </div>
             </a>

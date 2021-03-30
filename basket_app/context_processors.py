@@ -1,4 +1,5 @@
 from auth_app.models import ShopUser
+from main_app.models import ProductCategory
 
 
 def basket(request):

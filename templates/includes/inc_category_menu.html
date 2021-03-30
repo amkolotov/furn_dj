@@ -3,9 +3,16 @@
 <div class="container">
 
     <ul class="nav justify-content-center categories-menu">
+
+        <li class="nav-item">
+            <span class="nav-link text-dark">Выбор категории:</span>
+        </li>
+
+
         <li class="nav-item">
             <a class="nav-link text-dark" href="{% url 'main_app:category_products' 0 %}">Все</a>
         </li>
+
 
         {% for category in categories %}
         <li class="nav-item">

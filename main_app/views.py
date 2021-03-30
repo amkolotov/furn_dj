@@ -16,13 +16,13 @@ def get_hot_product():
 
 def get_sample_product(product):
     return random.sample(
-        list(Product.objects.filter(category=product.category, is_active=True).exclude(pk=product.id)), k=3
+        list(Product.objects.filter(category=product.category, is_active=True).exclude(pk=product.id)), k=4
     )
 
 
 class IndexTemplateView(TemplateView):
     """Главная страница"""
-    extra_context = {'objects': random.sample(list(Product.objects.filter(is_active=True)), k=3)}
+    extra_context = {'objects': random.sample(list(Product.objects.filter(is_active=True)), k=4)}
     template_name = 'main_app/index.html'
 
 

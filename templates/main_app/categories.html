@@ -1,86 +1,87 @@
 {% extends 'base.html' %}
 
 {% load static %}
+{% load old_price %}
 
 {% block title %}
-    Товары
+Товары
 {% endblock %}
 
 {% block content %}
 
-    {% include 'includes/inc_category_menu.html' %}
+{% include 'includes/inc_category_menu.html' %}
 
-    <div class="container">
+<div class="container">
 
-        <div class="row hot-product my-4">
+    <div class="row hot-product my-5">
 
-            <div class="col hot-product-img">
+        <div class="col hot-product-img">
 
-                <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
-                    <div class="carousel-inner">
-                        {% for image in hot_product.images_set.all %}
-                        <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                            <img src="{% get_media_prefix %}{{ image.upload }}" class="d-block w-100"
-                                 alt="{{ hot_product.name }}">
-                        </div>
-                        {% endfor %}
+            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+                <div class="carousel-inner">
+                    {% for image in hot_product.images_set.all %}
+                    <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                        <img src="{% get_media_prefix %}{{ image.upload }}" class="d-block w-100"
+                             alt="{{ hot_product.name }}">
                     </div>
-
-<!--                    <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">-->
-<!--                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
-<!--                        <span class="sr-only">Previous</span>-->
-<!--                    </a>-->
-<!--                    <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">-->
-<!--                        <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
-<!--                        <span class="sr-only">Next</span>-->
-<!--                    </a>-->
-
+                    {% endfor %}
                 </div>
 
             </div>
 
-            <div class="col hot-offer my-auto d-flex justify-content-center">
-                <div class="hot-offer-desc text-center">
-                    <h3 class="big-bold">{{ hot_product.name|title }}</h3>
-                    <h3 class="red">горячее предложение</h3>
-                    <p class="price">{{ hot_product.price|floatformat:0 }}<span> руб</span></p>
+        </div>
 
-                    <div class="description-text">
-                        {{ hot_product.short_desc }}
-                    </div>
-                    <a href="{% url 'main_app:product' hot_product.pk %}" class="btn btn-danger mt-4">подробнее <i
-                            class="fa fa-chevron-right" aria-hidden="true"></i>
-                    </a>
+        <div class="col hot-offer my-auto d-flex justify-content-center">
+            <div class="hot-offer-desc text-center">
+                <h3 class="big-bold">{{ hot_product.name|title }}</h3>
+                <h3 class="red">горячее предложение</h3>
+                <p class="price">{{ hot_product.price|floatformat:0 }}<span> руб</span></p>
+                <p class="price-old">{{ hot_product.price|old_price|floatformat:0 }}<span> руб</span></p>
+
+                <div class="description-text">
+                    {{ hot_product.short_desc }}
                 </div>
-            </div>
-        </div>
-
-        <div class="offer row py-1">
-            <h2 class="col pt-2">Похожие продукты</h2>
-            <h1>
-                <a class="btn btn-outline-primary mr-4" href="{% url 'main_app:category_products' 0 %}">Смотреть все</a>
-            </h1>
-        </div>
-
-        <div class="row hot-offers my-4">
-
-            {% for product in sample_products %}
-            <div class="col-4 d-flex justify-content-center">
-                <a href="{% url 'main_app:product' product.pk %}">
-                    <img class="product-img" src="{% get_media_prefix %}{{ product.images_set.first.upload }}"
-                         alt="{{ product.name }}">
-                    <div class="text">
-                        <div class="my-auto">
-                            <h4>{{ product.name|title }}</h4>
-                            <img class="my-2" src="{% static 'img/icon-hover.png' %}" alt="img">
-                            <p class="mx-4">{{ product.short_desc }}</p>
-                        </div>
-                    </div>
+                <a href="{% url 'main_app:product' hot_product.pk %}" class="btn btn-danger mt-4">подробнее <i
+                        class="fa fa-chevron-right" aria-hidden="true"></i>
                 </a>
             </div>
-            {% endfor %}
-
         </div>
     </div>
+
+    <div class="offer row my-5 pl-3 pb-1">
+        <a href="{% url 'main_app:category_products' 0 %}"><span>Похожие предложения</span></a>
+    </div>
+
+    <div class="row cards mb-4">
+        {% for product in sample_products %}
+        <div class="col-md-3 ">
+            <a href="{% url 'main_app:product' product.pk %}">
+                <div class="product-card">
+                    <div class="img-plus pt-2">
+
+                        <img src="{% static 'img/plus.svg' %}" alt="plus" class="plus">
+
+                        <img class="card-img rounded mx-auto d-block py-4"
+                             src="{% get_media_prefix %}{{ product.images_set.first.upload }}"
+                             alt="{{ product.name }}"
+                        >
+                    </div>
+                    <div class="ml-4 mb-2">
+                        <span class="card-name">{{ product.name|title }}</span>
+                    </div>
+                    <div class="ml-5">
+                        <span class="card-price">{{ product.price|floatformat:0 }}₽</span>
+                    </div>
+                    <div class="text-center pb-4 mb-4">
+                        <span class="card-old-price">{{ product.price|old_price|floatformat:0 }}₽</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+
+    </div>
+
+</div>
 
 {% endblock %}
