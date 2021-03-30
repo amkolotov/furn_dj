@@ -17,11 +17,6 @@
                 </div>
                 <div class="col-md-3 col-sm-6 m-auto text-center"><span class="phone align-middle">8 800 888 88 88</span></div>
                 <div class="col-md-2 col-sm-6 m-auto"><span class="align-middle">info@shop.ru</span></div>
-                {% if user.is_superuser %}
-                <div class="col m-auto">
-                    <a class="p-2 text-dark" href="{% url 'admin:index' %}">Админка</a>
-                </div>
-                {% endif %}
             </div>
         </nav>
     </div>
@@ -30,12 +25,16 @@
             <div class="row h-100">
                 <div class="col-md-9 col-sm-12 m-auto d-flex justify-content-between">
                     <a class="p-2 text-dark" href="{% url 'main_app:index' %}">Главная</a>
-                    <a class="p-2 text-dark" href="{% url 'main_app:contacts' %}">О нас</a>
+                    <a class="p-2 text-dark" href="{% url 'main_app:categories' %}">Категории</a>
                     <a class="p-2 text-dark" href="{% url 'main_app:category_products' 0 %}">Каталог</a>
                     <a class="p-2 text-dark" href="{% url 'main_app:contacts' %}">Доставка</a>
                     <a class="p-2 text-dark" href="{% url 'main_app:contacts' %}">Оплата</a>
-                    <a class="p-2 text-dark" href="{% url 'main_app:contacts' %}">Гарантии</a>
                     <a class="p-2 text-dark" href="{% url 'main_app:contacts' %}">Контакты</a>
+                    {% if user.is_superuser %}
+                    <a class="p-2 text-dark" href="{% url 'admin:index' %}">Админка</a>
+                    {% endif %}
+
+
                 </div>
                 <div class="col-md-1 col-sm-6 m-auto d-flex justify-content-end">
                     <a class="p-2 text-dark d-flex" href="{% url 'basket_app:basket' %}" id="basket">

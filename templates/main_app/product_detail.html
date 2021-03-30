@@ -67,7 +67,7 @@
         {% for product in sample_products %}
         <div class="col-md-3 ">
             <a href="{% url 'main_app:product' product.pk %}">
-                <div class="product-card">
+                <div class="product-card mb-5">
                     <div class="img-plus pt-2">
 
                         <img src="{% static 'img/plus.svg' %}" alt="plus" class="plus">
@@ -80,11 +80,8 @@
                     <div class="ml-4 mb-2">
                         <span class="card-name">{{ product.name|title }}</span>
                     </div>
-                    <div class="ml-5">
+                    <div class="ml-5 pb-4">
                         <span class="card-price">{{ product.price|floatformat:0 }}₽</span>
-                    </div>
-                    <div class="text-center pb-4 mb-4">
-                        <span class="card-old-price">{{ product.price|floatformat:0 }}₽</span>
                     </div>
                 </div>
             </a>
